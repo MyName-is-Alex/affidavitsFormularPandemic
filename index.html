@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Declaratie automata</title>
+    <meta name="viewport" content="width= device-width, initial-scale= 1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" name="CSS/text" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="title"></div>
+    <div class="container">
+      <!--Personal information data START-->
+      <div class="info">
+        <div class="name">
+          <p>Subsemnatul/a</p>
+          <input id="nameInput" type="text" placeholder="Nume si Prenume" />
+        </div>
+        <div class="address">
+          <p>domiciliat/a in</p>
+          <input id="addressInput" type="text" />
+        </div>
+        <div class="actualAddress">
+          <p>cu resedinta in fapt in</p>
+          <input id="actualAddressInput" type="text" />
+        </div>
+        <div class="birthDate">
+          <p>nascut/a în data de</p>
+          <input id="birthDateInput" type="text" placeholder="Ziua/Luna/Anul" />
+        </div>
+        <div class="birthLocation">
+          <p>in localitatea</p>
+          <input id="birthLocationInput" type="text" />
+        </div>
+      </div>
+      <!--Personal information data END-->
+      <!--Reason of activities START-->
+      <div class="activities">
+        <div class="time">
+          <p>
+            declar pe proprie răspundere, cunoscând prevedirele articolului 326
+            din Codul Penal privind falsul în declarații, că mă deplasez în
+            afara locuinței, în intervalul orar
+            <select id="timeOfGoingOut">
+              <option value="disable" disabled>Selectati intervalul</option>
+              <option value="V">20:00 - 5:00</option>
+              <option value="L">22:00 - 5:00</option>
+            </select>
+            , din următorul/următoarele motive:
+          </p>
+        </div>
+        <div class="reason">
+          <div class="first reason">
+            <input id="work" type="checkbox" value="work" />
+            <label for="work">
+              1. Deplasarea în interes profesional, inclusiv între
+              locuinţă/gospodărie şi locul/locurile de desfăşurare a activităţii
+              profesionale şi înapoi. Menționez că îmi desfășor activitatea
+              profesională la instituția/societatea/organizația;
+            </label>
+          </div>
+          <div class="second reason">
+            <input id="medical" type="checkbox" value="medical" />
+            <label for="medical">
+              2. Deplasarea pentru asistenţă medicală care nu poate fi amânată
+              şi nici realizată de la distanţă, precum şi pentru achiziţionarea
+              de medicamente;
+            </label>
+          </div>
+          <div class="third reason">
+            <input id="ride" type="checkbox" value="ride" />
+            <label for="ride">
+              3. Deplasări în afara localităţilor ale persoanelor care sunt în
+              tranzit sau efectuează călătorii al căror interval orar se
+              suprapune cu perioada interdicţiei, cum ar fi cele efectuate cu
+              avionul, trenul, autocare sau alte mijloace de transport de
+              persoane, şi care poate fi dovedit prin bilet sau orice altă
+              modalitate de achitare a călătoriei;
+            </label>
+          </div>
+          <div class="forth reason">
+            <input id="assistance" type="checkbox" value="assistance" />
+            <label for="assistance">
+              4. Deplasarea din motive justificate, precum îngrijirea/ însoţirea
+              copilului, asistenţa persoanelor vârstnice, bolnave sau cu
+              dizabilităţi ori decesul unui membru de familie;
+            </label>
+          </div>
+          <hr />
+        </div>
+        <div class="date">
+          <label for="dateOfStatement">Data:</label>
+          <input
+            id="dateOfStatement"
+            type="text"
+            min="2020-01-01"
+            placeholder="Introduceti data"
+            onfocus="this.type='date'"
+          />
+        </div>
+      </div>
+      <!--Reason of activities END-->
+    </div>
+    <div class="button">
+      <button onclick="contentReplace()">Genereaza declaratie</button>
+    </div>
+    <!--Output Start-->
+    <div class="output">
+      <div class="outPutInfo">
+        <p>Subsemntaul/a:<span id="nameOf"></span></p>
+        <p>domiciliat/a in:<span id="placeOf"></span></p>
+        <p>cu resedinta in fat in:<span id="actualPlaceOf"></span></p>
+        <p>
+          nascut/a in data de:
+          <span id="dateOf"></span>
+          in localitatea:
+          <span id="birthOf"></span>
+        </p>
+        <p>
+          declar pe proprie răspundere, cunoscând prevederile articolului 326
+          din Codul Penal privind falsul în declaratii, că mă deplasez în afara
+          locuinței, în intervalul orar <span id="timeOf"></span>, din
+          următorul/următoarele motive:
+        </p>
+      </div>
+      <div class="reasonOutput">
+        <div class="first_reasonOut">
+          <input id="workOut" type="checkbox" value="workOut" />
+          <label for="workOut">
+            1. Deplasarea în interes profesional, inclusiv între
+            locuinţă/gospodărie şi locul/locurile de desfăşurare a activităţii
+            profesionale şi înapoi. Menționez că îmi desfășor activitatea
+            profesională la instituția/societatea/organizația;
+          </label>
+        </div>
+        <div class="second_reasonOut">
+          <input id="medicalOut" type="checkbox" value="medicalOut" />
+          <label for="medicalOut">
+            2. Deplasarea pentru asistenţă medicală care nu poate fi amânată şi
+            nici realizată de la distanţă, precum şi pentru achiziţionarea de
+            medicamente;
+          </label>
+        </div>
+        <div class="third_reasonOut">
+          <input id="rideOut" type="checkbox" value="rideOut" />
+          <label for="rideOut">
+            3. Deplasări în afara localităţilor ale persoanelor care sunt în
+            tranzit sau efectuează călătorii al căror interval orar se suprapune
+            cu perioada interdicţiei, cum ar fi cele efectuate cu avionul,
+            trenul, autocare sau alte mijloace de transport de persoane, şi care
+            poate fi dovedit prin bilet sau orice altă modalitate de achitare a
+            călătoriei;
+          </label>
+        </div>
+        <div class="forth_reasonOut">
+          <input id="assistanceOut" type="checkbox" value="assistanceOut" />
+          <label for="assistanceOut">
+            4. Deplasarea din motive justificate, precum îngrijirea/ însoţirea
+            copilului, asistenţa persoanelor vârstnice, bolnave sau cu
+            dizabilităţi ori decesul unui membru de familie;
+          </label>
+        </div>
+      </div>
+      <hr />
+      <div class="footer">
+        <div class="dateOfDeclaration">
+          <p>Data: <span id="dateOfDeclarationOutput"></span></p>
+        </div>
+        <div class="signature">
+          <p>Semnatura:</p>
+          <div class="signaturePlace"></div>
+        </div>
+      </div>
+      <div class="printButton">
+        <button onclick="printButton()">Print</button>
+      </div>
+    </div>
+    <!--Output End-->
+  </body>
+  <script src="main.js"></script>
+</html>

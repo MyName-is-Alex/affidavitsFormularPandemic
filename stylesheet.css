@@ -1,0 +1,150 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 17px;
+  background: rgb(240, 240, 240);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 50px auto;
+}
+.output {
+  display: none;
+}
+
+/*Personal information data START*/
+.info {
+  width: 30em;
+  min-height: 20em;
+  padding: 20px;
+  margin: 5em;
+  box-shadow: 5px 5px 10px 0px rgba(128, 127, 127, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* INFO DISPLAY START */
+.name,
+.address,
+.actualAddress,
+.birthDate,
+.birthLocation {
+  display: flex;
+  flex-direction: row;
+  width: 30em;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.name input,
+.address input,
+.actualAddress input,
+.birthDate input,
+.birthLocation input {
+  height: 1.5em;
+  line-height: 1.5em;
+  width: 15em;
+  margin: auto 0;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.name p,
+.name input {
+  display: inline-block;
+}
+.address p,
+.address input {
+  display: inline-block;
+}
+.actualAddress p,
+.actualAddress input {
+  display: inline-block;
+}
+.birthDate p,
+.birthDate input {
+  display: inline-block;
+}
+.birthLocation p,
+.birthLocation input {
+  display: inline-block;
+}
+/* INFO DISPLAY END */
+/*Personal information data START*/
+
+/* Reason of activities START */
+.activities {
+  margin: 70px 100px auto 0px;
+}
+.time,
+.reason {
+  line-height: 1.5em;
+}
+
+.reason input {
+  background-color: cadetblue;
+  height: 15px;
+  width: 15px;
+}
+
+.date input {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Reason of activities END */
+
+/* BUTTON */
+
+.button {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 30px;
+}
+
+button {
+  height: 50px;
+  width: 225px;
+  margin-left: -100px;
+  border-radius: 5px;
+  background-color: rgb(99, 156, 231);
+  color: #fff;
+}
+
+/*--------------------OUTPUT SECTION --------------------------*/
+
+.output {
+  margin: 100px auto;
+  height: auto;
+  width: 29.7cm;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signature {
+  display: flex;
+  flex-direction: row;
+  margin-right: 450px;
+}
+.signature .signaturePlace {
+  width: 100px;
+  height: 18px;
+  margin: auto;
+  border-bottom: 2px solid rgb(85, 85, 85);
+  margin-left: 20px;
+}
+
+.printButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
